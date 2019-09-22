@@ -30,18 +30,18 @@ percentage = (count / 113809.0) * 100
 
 max = open('words.txt')
 
-def avoids(word,letter):
+def sep(word,letter):
     for char in word:
         if char in letter:
             return False
     return True
 
 
-letter = raw_input('What letters to exclude? ')
+letter = input('What letters to exclude? ')
 count = 0
 for line in max:
     word = line.strip()
-    if avoids(word, letter):
+    if sep(word, letter):
         count += 1
         print word
 
